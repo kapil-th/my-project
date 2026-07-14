@@ -3,18 +3,19 @@
  */
 
 describe('TopNotch launch page', () => {
-  beforeAll(() => {
+  beforeAll(async () => {
     document.body.innerHTML = `
-      <div>
-        <div id="countdown"></div>
-        <form id="notify-form">
-          <input id="email" type="email" />
-          <button type="submit">Notify Me</button>
-        </form>
-        <p id="form-message"></p>
-      </div>
-    `;
-    require('../script.js');
+    <div>
+      <div id="countdown"></div>
+      <form id="notify-form">
+        <input id="email" type="email" />
+        <button type="submit">Notify Me</button>
+      </form>
+      <p id="form-message"></p>
+    </div>
+  `;
+
+    await import('../script');
   });
 
   it('renders countdown text', () => {
