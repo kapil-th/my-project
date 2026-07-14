@@ -1,0 +1,234 @@
+:root {
+  color-scheme: dark;
+  --bg: #08111b;
+  --surface: #111d29;
+  --surface-strong: #172938;
+  --text: #eef3f7;
+  --muted: #8aa6bd;
+  --accent: #6c9fff;
+  --accent-strong: #73b7ff;
+  --border: rgba(110, 158, 213, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #15243d 0%, #08111b 35%, #08111b 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 64px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 36px 36px 42px;
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  background: rgba(16, 28, 43, 0.83);
+  backdrop-filter: blur(20px);
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 4.8vw, 5.4rem);
+  letter-spacing: -0.05em;
+}
+
+.hero p {
+  margin: 24px 0 28px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.countdown {
+  width: fit-content;
+  padding: 18px 24px;
+  border-radius: 18px;
+  background: rgba(42, 62, 92, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.notify-form {
+  margin-top: 32px;
+  display: grid;
+  gap: 14px;
+}
+
+.notify-form label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.notify-form input {
+  flex: 1;
+  min-width: 220px;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: rgba(15, 24, 38, 0.96);
+  color: var(--text);
+  outline: none;
+}
+
+.notify-form button {
+  border: none;
+  border-radius: 14px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-message {
+  margin: 0;
+  color: #9ae6ff;
+  font-size: 0.95rem;
+}
+
+.hero-visual {
+  display: grid;
+  place-items: center;
+}
+
+.phone-mockup {
+  width: 100%;
+  max-width: 360px;
+  padding: 28px;
+  background: linear-gradient(180deg, rgba(18, 34, 55, 0.96), #071018);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.25);
+}
+
+.phone-title {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.phone-mockup ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.phone-mockup li {
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.features,
+.testimonials {
+  margin-top: 48px;
+  display: grid;
+  gap: 24px;
+}
+
+.features {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.features article {
+  padding: 28px;
+  border-radius: 24px;
+  background: rgba(15, 24, 38, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.features h2,
+.testimonials h2 {
+  margin: 0 0 18px;
+  font-size: 1.45rem;
+}
+
+.features p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.testimonials h2 {
+  font-size: 1.85rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.testimonial-grid blockquote {
+  margin: 0;
+  padding: 28px;
+  border-radius: 24px;
+  background: rgba(13, 22, 33, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.testimonial-grid p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.testimonial-grid footer {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 670px) {
+  .page-shell {
+    width: calc(100% - 24px);
+    padding: 24px 0 48px;
+  }
+
+  .features,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
