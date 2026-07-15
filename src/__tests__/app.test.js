@@ -1,21 +1,19 @@
-/**
- * @jest-environment jsdom
- */
+/* eslint-disable global-require, import/extensions */
 
 describe('TopNotch launch page', () => {
-  beforeAll(async () => {
+  beforeAll(() => {
     document.body.innerHTML = `
-    <div>
-      <div id="countdown"></div>
-      <form id="notify-form">
-        <input id="email" type="email" />
-        <button type="submit">Notify Me</button>
-      </form>
-      <p id="form-message"></p>
-    </div>
-  `;
+      <div>
+        <div id="countdown"></div>
+        <form id="notify-form">
+          <input id="email" type="email" />
+          <button type="submit">Notify Me</button>
+        </form>
+        <p id="form-message"></p>
+      </div>
+    `;
 
-    await import('../script');
+    require('../script.js');
   });
 
   it('renders countdown text', () => {

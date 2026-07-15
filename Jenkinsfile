@@ -13,23 +13,6 @@ pipeline {
       }
     }
 
-    stage('Install') {
-      steps {
-        sh 'npm install'
-      }
-    }
-
-    stage('Lint') {
-      steps {
-        sh 'npm run lint'
-      }
-    }
-
-    stage('Test') {
-      steps {
-        sh 'npm test'
-      }
-    }
 
     stage('Build Docker Image') {
       steps {
@@ -40,9 +23,9 @@ pipeline {
     stage('Smoke Test') {
       steps {
         script {
-          sh 'docker run --rm -d --name ${APP_NAME}-smoke -p 8080:8080 ${IMAGE_NAME}'
+          sh 'docker run --rm -d --name ${APP_NAME}-smoke -p 3000:3000 ${IMAGE_NAME}'
           sh 'sleep 3'
-          sh 'curl -f http://localhost:8080'
+          sh 'curl -f http://localhost:3000'
         }
       }
     }

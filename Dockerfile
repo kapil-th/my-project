@@ -3,5 +3,5 @@ WORKDIR /app
 COPY package.json package-lock.json* ./
 RUN npm install
 COPY . .
-EXPOSE 8080
-CMD ["npx", "http-server", "src", "-p", "8080", "-c-1"]
+EXPOSE 3000
+CMD ["npx", "http-server", "src", "-p", "3000", "-c-1"]

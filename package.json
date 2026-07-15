@@ -5,7 +5,7 @@
   "type": "module",
   "description": "A premium launch landing page with countdown, feature highlights, and email capture.",
   "scripts": {
-    "start": "npx http-server src -p 8080 -c-1",
+    "start": "npx http-server src -p 3000 -c-1",
     "lint": "npx eslint src/**/*.js",
     "test": "npx jest",
     "build": "echo 'No build step required for this static landing page.'"
@@ -15,7 +15,8 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.28.1",
     "http-server": "^14.1.1",
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.4.1"
   },
   "jest": {
     "testEnvironment": "jsdom"

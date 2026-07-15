@@ -10,6 +10,8 @@ function formatTimeUnit(unit) {
   return String(unit).padStart(2, '0');
 }
 
+const intervalId = setInterval(updateCountdown, 1000);
+
 function updateCountdown() {
   const now = new Date();
   const delta = launchDate - now;
@@ -28,7 +30,6 @@ function updateCountdown() {
   countdownElement.textContent = `${formatTimeUnit(days)}d ${formatTimeUnit(hours)}h ${formatTimeUnit(minutes)}m ${formatTimeUnit(seconds)}s until launch`;
 }
 
-const intervalId = setInterval(updateCountdown, 1000);
 updateCountdown();
 
 form.addEventListener('submit', (event) => {
